@@ -1,0 +1,613 @@
+@font-face {
+    font-family: 'Phraktur-1337';
+    font-display: block;
+    src: url('https://cdn.glitch.com/0f1ac2ce-f374-4e90-9b36-4df7e0dc5087%2FPhraktur1337GX.ttf?v=1607416919382') format('truetype');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'Maison-Neue';
+    src: url('https://cdn.glitch.com/0f1ac2ce-f374-4e90-9b36-4df7e0dc5087%2FMaison-Neue-Medium.otf?v=1607416918015') format('opentype');
+}
+
+* {
+    /* -webkit-text-stroke: 0.15px; */
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --text-weight: 50;
+}
+
+html {
+    font-family: 'Phraktur-1337';
+    color: #fff;
+    background: #000;
+    /* overflow-x: scroll; */
+}
+
+body {
+    height: 100vh;
+    width: max-content;
+    /* display: flex;
+    flex-direction: row;
+    align-items: flex-start; */
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    float: left;
+}
+
+.hero {
+    width: 98vw;
+    height: 100%;
+    /* float: left; */
+}
+
+        .hero-container {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            margin-bottom: 40px;
+            font-variation-settings: "wght" var(--text-weight);
+            font-size: 144px;
+            /* animation: demo 5s ease-in-out infinite; */
+        }
+
+        .title-descrip {
+            font-size: 88px;
+            line-height: 1.06;
+            font-variation-settings: "wght" var(--text-weight);
+            /* animation: demo 5s ease-in-out infinite; */
+
+        }
+
+        .leet-slider {
+            margin-top: 90px;
+            width: 70%;
+            margin-bottom: 50px;
+        }
+
+        input {
+            width: 100%;
+            line-height: 1;
+            height: 2em;
+            background-color: transparent;
+            cursor: pointer;
+
+        }
+
+        input[type=range] {
+            -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+            width: 100%; /* Specific width is required for Firefox. */
+            background: transparent; /* Otherwise white in Chrome */
+          }
+          
+          input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+          }
+          
+          input[type=range]:focus {
+            outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+          }
+          
+          input[type=range]::-ms-track {
+            width: 100%;
+            cursor: pointer;
+          
+            /* Hides the slider so custom styles can be added */
+            background: transparent; 
+            border-color: transparent;
+            color: transparent;
+          }
+
+          /* Special styling for WebKit/Blink */
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                border: none;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                background: #ffffff;
+                cursor: pointer;
+                margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+            }
+  
+            /* All the same stuff for Firefox */
+            input[type=range]::-moz-range-thumb {
+                border: none;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                background: #ffffff;
+                cursor: pointer;
+            }
+
+            input[type=range]::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 2px;
+                cursor: pointer;
+                background: #fff;
+              }
+              
+              input[type=range]:focus::-webkit-slider-runnable-track {
+                background: #fff;
+              }
+
+              input[type=range]::-moz-range-track {
+                width: 100%;
+                height: 2px;
+                cursor: pointer;
+                background: #fff;
+              }
+
+
+.transition {
+    margin-left: -20px;
+    /* float: left; */
+    height: 100%;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+        .arrow-container {
+            height: 100%;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow {
+            /* position: absolute;
+            top: 50%; */
+            font-variation-settings: 'wght' 50;
+            font-size: 144px;
+            /* transform: translateY(-50%); */
+            width: fit-content;
+        }
+
+        .line {
+            flex: 1;
+            border-bottom: 2px solid #fff;
+            height: 35px;
+            margin-left: -10px;
+        }
+
+
+.timeline {
+    height: 100%;
+    width: max-content;
+}
+
+    .interpolation {
+        float: left;
+        height: 100%;
+        width: 101vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        z-index: 1;
+        position: sticky;
+        position: -webkit-sticky;
+        left: -2px;
+    }
+
+        .splitline-container {
+            /* float: left; */
+            height: 75%;
+            display: flex;
+            flex-direction: row;
+            /* justify-content: space-between; */
+            align-items: center;
+            flex: 1;
+
+        }
+
+            .line-vert {
+                height: 100%;
+                border-left: 2px solid #fff;
+                width: 3px;
+            }
+
+            .splitline {
+                flex: 1;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+            }
+
+                .line-top {
+                    border-top: 2px solid #fff;
+                }
+
+                .line-bottom {
+                    border-bottom: 2px solid #fff;
+                }
+
+
+
+        .gg-ar {
+            height: 87%;
+            font-size: 88px;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: fit-content;
+            align-items: center;
+        }
+
+            .gamergate.beginning {
+                font-variation-settings: 'wght' 50;
+            }
+
+            .gamergate.shift {
+                font-variation-settings: 'wght' 50;
+                animation: interpolate1 1s linear infinite;
+                animation-play-state: paused;
+                animation-delay: calc(var(--scroll) * -1s);
+            }
+
+            .gamergate.ending {
+                font-variation-settings: 'wght' 300;
+            }
+
+            .alt-right.beginning {
+                font-variation-settings: 'wght' 300;
+            }
+
+            .alt-right.shift {
+                font-variation-settings: 'wght' 300;
+                animation: interpolate2 1s linear infinite;
+                animation-play-state: paused;
+                animation-delay: calc(var(--scroll) * -1s);
+            }
+
+            .alt-right.ending {
+                font-variation-settings: 'wght' 50;
+            }
+
+            @keyframes interpolate1 {
+                0% {
+                    font-variation-settings: 'wght' 50;
+                }
+                100% {
+                    font-variation-settings: 'wght' 300;
+                }
+            }
+
+            @keyframes interpolate2 {
+                0% {
+                    font-variation-settings: 'wght' 300;
+                }
+                100% {
+                    font-variation-settings: 'wght' 50;
+                }
+            }
+
+            @keyframes demo {
+                25% {
+                    font-variation-settings: 'wght' 50;
+                }
+
+                75% {
+                    font-variation-settings: 'wght' 300;
+                }
+            }
+
+    .timeline-block {
+        width: 75vw;
+        height: 100%;
+        float: left;
+        position: relative;
+        /* background: green; */
+        display: flex;
+        flex-direction: column;
+        /* opacity: 0.4; */
+        color: #C9C9C9;
+    }
+
+        .gray {
+            width: 100%;
+            height: 5%;
+            background: #606060;
+        }
+
+        .red {
+            flex: 1;
+            background: #960000be;
+            width: 100%;
+        }
+
+        .images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: soft-light;
+            opacity: 0.5;
+            background-repeat: repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .first {
+            background-image: url("https://cdn.glitch.com/0f1ac2ce-f374-4e90-9b36-4df7e0dc5087%2Fquinn-sarkeesian.png?v=1607416919841");
+            
+        }
+
+        .second {
+            background-image: url("https://cdn.glitch.com/0f1ac2ce-f374-4e90-9b36-4df7e0dc5087%2Fmilo.png?v=1607416919189");
+        }
+
+        .third {
+            background-image: url("https://cdn.glitch.com/0f1ac2ce-f374-4e90-9b36-4df7e0dc5087%2Fmaga.png?v=1607416919529");
+        }
+
+        .fourth {
+            background-image: url("https://cdn.glitch.com/0f1ac2ce-f374-4e90-9b36-4df7e0dc5087%2Fkekistan.png?v=1607416920508");
+        }
+
+        .timeline-text {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 95%;
+            width: 60%;
+        }
+
+        .year-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .dot {
+                height: 20px;
+                width: 20px;
+                background-color: #C9C9C9;
+                border-radius: 50%;
+            }
+
+            .year-line {
+                border-bottom: 2px solid #C9C9C9;
+                flex: 1;
+            }
+
+            .year {
+                font-size: 144px;
+                font-variation-settings: 'wght' 50;
+                margin-bottom: 20px;
+                padding: 0px 20px;
+            }
+
+        .caption {
+            font-family: 'Maison-Neue', Arial, Helvetica, sans-serif;
+            font-size: 19px;
+            text-align: left;
+            line-height: 1.4;
+            margin-left: 10px;
+        }
+    
+    .spacer {
+        width: 100vw;
+        height: 100%;
+        float: left;
+        background: transparent;
+    }
+
+.transition2 {
+    height: 100%;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+    .line2 {
+        flex: 1;
+        border-bottom: 2px solid #fff;
+        height: 35px;
+    }
+
+    .arrow-container2 {
+        height: 100%;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        margin-left: -5%;
+    }
+
+.about {
+    height: 100%;
+    width: 100vw;
+    min-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: -1%;
+}
+
+    .about-header {
+        font-size: 88px;
+        font-variation-settings: "wght" 50;
+        margin-bottom: 20px;
+        /* height: fit-content; */
+    }
+
+    .about-text {
+        /* height: fit-content; */
+        width: 65%;
+        max-width: 900px;
+        /* display: flex;
+        flex-direction: row;
+        margin-left: 30px; */
+    }
+
+        .para {
+            padding: 30px;
+            font-family: 'Maison-Neue', Arial, Helvetica, sans-serif;
+            font-size: 19px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+.glyphs {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+    .glyph-table {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-right: 200px;
+    }
+
+    .table-caption {
+        font-size: 19px;
+        text-transform: uppercase;
+        font-family: 'Maison-Neue', Arial, Helvetica, sans-serif;
+        text-align: left;
+        margin-top: -40px;
+        margin-bottom: 5px;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .row div {
+        font-size: 140px;
+        font-variation-settings: 'wght' 50;
+        width: 200px;
+        height: 200px;
+        border: 2px solid #fff;
+        text-align: center;
+    }
+
+    .glyph-table:last-of-type {
+        margin-right: 0;
+    }
+
+    .letters .row div {
+        font-variation-settings: 'wght' 50;
+        animation: demo 5000ms infinite forwards;
+      }
+      
+      @keyframes demo {
+        25% {
+            font-variation-settings: 'wght' 50;
+        }
+        50% {
+          font-variation-settings: 'wght' 300;
+        }
+        75% {
+            font-variation-settings: 'wght' 300;
+          }
+      
+        100% {
+          font-variation-settings: 'wght' 50;
+        }
+      }
+
+
+#tester {
+    float: right;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#textarea {
+    font-size: 144px;
+    font-variation-settings: "wght" var(--text-weight);
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#textarea:focus {
+    outline: none;
+}
+
+.ui {
+    width: 75%;
+    height: 200px;
+    /* margin-bottom: 80px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.test-slider {
+    width: 45%;
+
+}
+
+/* #test-size {
+    margin-top: 10%;
+} */
+
+
+.label {
+    width: 100%;
+    text-align: center;
+    font-family: 'Maison-Neue', Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+/* .colophon {
+    height: 100%;
+    width: 400px;
+    position: relative;
+}
+
+.colophon div {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    font-family: 'Maison-Neue', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+} */

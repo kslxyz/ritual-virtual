@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ouroborouroborouroborouroborourobor</title>
+
+    <link rel="stylesheet" href="/style.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.0/p5.min.js"></script>
+    <script src="/snake.js"></script>
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+        <div id="bg"></div>
+    <div id="snake"></div>
+    <div id="overlay">
+      <div class="buffer"></div>
+      <div class="buffer"></div>
+      <div class="text">
+              <div class="game">
+        <img src="https://cdn.glitch.com/4907232f-5aca-4196-9626-33ff262b7265%2Fgame2.png?v=1616451296783"/>
+      </div>
+      <div class="start">
+        <img src="https://cdn.glitch.com/4907232f-5aca-4196-9626-33ff262b7265%2Fgame3.png?v=1616451229926"/>
+      </div>
+      </div>
+      <div class="instruction">
+        &#8592; &#8593; &#8594; &#8595;
+      </div>
+      <div class="colormode">
+        
+        <label>Lightmode
+          <input type="radio" id="lightmode" name="mode" value="lightmode" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label>Darkmode
+          <input type="radio" id="darkmode" name="mode" value="darkmode"/>
+          <span class="checkmark"></span>
+        </label>
+        
+      </div>
+    </div>
+  </body>
+</html>

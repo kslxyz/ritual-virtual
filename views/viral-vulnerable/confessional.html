@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+  <TITLE>Viral/Vulnerable</TITLE>
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+
+	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot.js"></SCRIPT>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizadata.js"></SCRIPT>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="keystroke.js"></script> 
+
+
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+
+//ELIZA vv
+
+var eliza = new ElizaBot();
+var elizaLines = new Array();
+
+
+function elizaReset() {
+	eliza.reset();
+	elizaLines.length = 0;
+	elizaStep();
+}
+
+function elizaStep() {
+	var f = document.forms.e_form;
+	var userinput = f.e_input.value;
+	if (eliza.quit) {
+		f.e_input.value = '';
+		if (confirm("This session is over.\nStart over?")) elizaReset();
+		f.e_input.focus();
+		return;
+	}
+	else if (userinput != '') {
+    var usr = '<b>You:</b>   ' + userinput;
+    // elizaLines.push(usr);
+    $(".chatarea").append(`<p>${usr}</p>`);
+    $('.chatarea').animate({scrollTop: $('.chatarea').prop("scrollHeight")}, 0);
+    if(userinput!='vulnerability') {
+      var rpl ='<b>Kit:</b> ' + eliza.transform(userinput);
+      // elizaLines.push(rpl);
+      $(".chatarea").append(`<p>${rpl}</p>`);
+      $('.chatarea').animate({scrollTop: $('.chatarea').prop("scrollHeight")}, 0);
+    } else {
+      var confession = "<p class='confession'>How does a diary differ from a dossier? Though both contain similarly sensitive information on a subject, in the case of the former, the information is volunteered by the subject, whereas in the latter, it is gathered without the subject's knowledge or consent.</p><p class='confession'>With the rise of the search engine, the browser input box has become a sort of diary, privy to confessions we may not speak even to the closest of our friends. However, the browser is not a diary. The browser reads; the browser sends information to servers. On the other end, a dossier is being compiled, compiled by the owner of the server and made available to the highest bidder. We know the diary to be a space for emotional vulnerability. Do we know the browser as a space for other vulnerabilities?</p><p class='confession'>In computer security, a vulnerability is a weakness which can be exploited by a threat actor, such as an attacker, to perform unauthorized actions within a computer system. To exploit a vulnerability, an attacker must have at least one applicable tool or technique that can connect to a system weakness. At this point, 'Big Data' is a household term, and how Big Data knows us—the users and consumers—is also common knowledge: it's to sell us stuff (mostly). Desire is our system vulnerability.</p><p class='confession'>This website features a modified version of ELIZA, an early chatbot made in the 1960s that simulates the strategies of a Rogerian psychotherapist. The chatbot asks leading questions to encourage users to engage in the emotional openness of therapy. This website also features keylogging, which is often seen in malware to steal passwords. Keylogging is the action of recording (logging) the keys struck on a keyboard, typically covertly, so that the person using the keyboard is unaware that their actions are being monitored.</p><p class='confession'>Any time you enter a desire word such as “want,” “need,” or “wish,” an image appears. These images are Google Image search results for words pulled from the full list of advertisement key terms that are associated with my (Kit's) personal Facebook and Instagram profiles. Clicking on an image leads to an automated Amazon product search for the associated term, and because you have now “searched” for that term, my ad becomes your ad. The site exploits desire-as-system-vulnerability in a way that ad tracking functions online.</p><p class='confession'>But even if it feels like you've been fooled, my actual hope is that by spreading our ad information to each other, it will confuse and disrupt the search patterns used to create your—or any other user's—dossier. Our collective emotional vulnerability becomes a sort of camouflage or dazzle against the vulnerabilities we expose in the browser.</p>";
+      // elizaLines.push(confession);
+      $(".chatarea").append(confession);
+      
+    }
+
+	}
+	else if (elizaLines.length == 0) {
+		var initial = '<b>Kit:</b> ' + eliza.getInitial();
+
+    $(".chatarea").append(`<p>${initial}</p>`);
+	}
+	f.e_input.value = '';
+	f.e_input.focus();
+}
+
+
+</SCRIPT>
+</HEAD>
+
+
+<BODY onload="window.setTimeout('elizaReset()',100)"><A NAME="top"></A>
+
+  
+<div class="eliza">
+  <div class="chatarea"></div>
+  <!-- <TEXTAREA NAME="e_display"></TEXTAREA> -->
+  <FORM NAME="e_form" onsubmit="elizaStep();return false">
+  <div class="input-area">
+    <div class="input-container">
+      <INPUT TYPE="text" autocomplete="off" NAME="e_input" placeholder="To request information, demand 'vulnerability'.">
+    </div>
+    <div class="button-container">
+      <INPUT TYPE="submit" VALUE="&nbsp;Talk&nbsp;"> 
+    </div>
+  
+      <!-- SIZE="57" style="font-size:100%;" -->
+ 
+      <!-- <INPUT TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)"> -->
+  </div>
+  </FORM>
+</div>
+
+<div id="area">
+</div>
+
+
+
+</BODY>
+</HTML>
